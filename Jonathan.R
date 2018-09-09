@@ -38,3 +38,27 @@ texts3d(x = pca1$x[,1], y = pca1$x[,2],z= pca1$x[,3], text = 1:38)
 # try scale but not a good idea
 
 pca1=prcomp(leuk1[1:ncol(leuk1)-1],scale=T)
+
+
+
+# Groups
+groups <- iris$Species
+levs <- levels(groups)
+group.col <- c("red", "green", "blue")
+# Plot observations
+rgl_init()
+rgl.spheres(x, y, z, r = 0.2,
+            color = group.col[as.numeric(groups)]) 
+rgl_add_axes(x, y, z, show.bbox = FALSE)
+# Compute ellipse for each group
+for (i in 1:length(levs)) {
+  group <- levs[i]
+  selected <- groups == group
+  xx <- x[selected]; yy <- y[selected]; zz <- z[selected]
+  ellips <- ellipse3d(cov(cbind(xx,yy,zz)), 
+                      centre=c(mean(xx), mean(yy), mean(zz)), level = 0.95) 
+  shade3d(ellips, col = group.col[i], alpha = 0.1, lit = FALSE) 
+  # show group labels
+  texts3d(mean(xx),mean(yy), mean(zz), text = group,
+          col= group.col[i], cex = 2)
+}
