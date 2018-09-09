@@ -4,8 +4,17 @@ table(leuk$V5001)
 
 class(leuk)
 
-# there are 38 labeled data not matching the email 37 
 sum(!is.na(leuk$V5001))
 
-# and they are not duplicated
+# there are no duplicated nor NA variables
 sum(duplicated(leuk))
+
+# no na in data
+any(is.na(leuk))
+sum(is.na(leuk))
+
+str(leuk$V5001)
+
+
+
+
