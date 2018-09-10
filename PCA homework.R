@@ -1,12 +1,5 @@
 load('LeukError.RData')
 
-# there are no duplicated nor NA variables
-sum(duplicated(leuk))
-
-# no na in data
-any(is.na(leuk))
-sum(is.na(leuk))
-
 summary(leuk$V5001)
 
 pca=prcomp(leuk[1:5000])
