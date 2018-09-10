@@ -37,7 +37,7 @@ texts3d(x = pca$x[,1], y = pca$x[,2],z= pca$x[,3], text = 1:38)
 
 
 # Groups
-groups <- iris$Species
+groups <- leuk$V5001
 levs <- levels(groups)
 group.col <- c("red", "green", "blue")
 # Plot observations
