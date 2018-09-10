@@ -72,7 +72,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Jonathan Cao** - *Initial work* - [What do you get if you multiply six by nine?](https://github.com/jonathanc42)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
