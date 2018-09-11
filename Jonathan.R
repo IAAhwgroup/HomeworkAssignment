@@ -15,6 +15,8 @@ pca=prcomp(subset(leuk, select=-c(V5001)))
 
 # first 3 PC explains 47% of the variance
 sum(pca$sdev[1:3]^2)/sum(pca$sdev^2)
+sum(pca$sdev[1:2]^2)/sum(pca$sdev^2)
+
 
 library(RColorBrewer)
 # display.brewer.all()
