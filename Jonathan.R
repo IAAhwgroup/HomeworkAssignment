@@ -34,32 +34,32 @@ summary(colors)
 library(rgl)
 plot3d(x = pca$x[,1], y = pca$x[,2],z= pca$x[,3],col = colors, xlab = "Principal Component 1", ylab = "Principal Component 2", zlab = "Principal Component 3", type="s",alpha=0.3)
 texts3d(x = pca$x[,1], y = pca$x[,2],z= pca$x[,3], text = 1:38)
-legend3d("topright", legend = levs, col= c('#D95F02','#1B9E77','#7570B3'),pch = 16, cex=1, inset=c(0.02))
+legend3d("topright", legend = levs, col= c('#1B9E77','#D95F02','#7570B3'),pch = 16, cex=1, inset=c(0.02))
 # try scale but not a good idea
 
 
 # Groups
 
-x = pca$x[,1]
-y = pca$x[,2]
-z= pca$x[,3]
-groups <- leuk$V5001
-levs <- levels(groups)
-group.col <- c("red", "green", "blue")
+# x = pca$x[,1]
+# y = pca$x[,2]
+# z= pca$x[,3]
+# groups <- leuk$V5001
+# levs <- levels(groups)
+group.col <- c('#D95F02','#1B9E77','#7570B3')
 # Plot observations
 # rgl_init()
 # rgl.spheres(x, y, z, r = 0.2,
 #             color = group.col[as.numeric(groups)]) 
 # rgl_add_axes(x, y, z, show.bbox = FALSE)
 # Compute ellipse for each group
-for (i in 1:length(levs)) {
-  group <- levs[i]
-  selected <- groups == group
-  xx <- x[selected]; yy <- y[selected]; zz <- z[selected]
-  ellips <- ellipse3d(cov(cbind(xx,yy,zz)), 
-                      centre=c(mean(xx), mean(yy), mean(zz)), level = 0.95) 
-  shade3d(ellips, col = group.col[i], alpha = 0.1, lit = FALSE) 
+#for (i in 1:length(levs)) {
+#  group <- levs[i]
+#  selected <- groups == group
+#  xx <- x[selected]; yy <- y[selected]; zz <- z[selected]
+#  ellips <- ellipse3d(cov(cbind(xx,yy,zz)), 
+#                      centre=c(mean(xx), mean(yy), mean(zz)), level = 0.95) 
+#  shade3d(ellips, col = group.col[i], alpha = 0.1, lit = FALSE) 
   # show group labels
-  texts3d(mean(xx),mean(yy), mean(zz), text = group,
-          col= group.col[i], cex = 2)
-}
+#  texts3d(mean(xx),mean(yy), mean(zz), text = group,
+#          col= group.col[i], cex = 2)
+#}
