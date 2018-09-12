@@ -43,7 +43,8 @@ legend3d("topright", legend = levs, col= c('#1B9E77','#D95F02','#7570B3'),pch = 
 # try scale but not a good idea
 
 
-# Groups
+# drawing some fancy ellipses
+
 
 # x = pca$x[,1]
 # y = pca$x[,2]
