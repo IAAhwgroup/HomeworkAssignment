@@ -59,7 +59,7 @@ group.col <- c('#D95F02','#1B9E77','#7570B3')
 #  ellips <- ellipse3d(cov(cbind(xx,yy,zz)), 
 #                      centre=c(mean(xx), mean(yy), mean(zz)), level = 0.95) 
 #  shade3d(ellips, col = group.col[i], alpha = 0.1, lit = FALSE) 
-  # show group labels
+#  show group labels
 #  texts3d(mean(xx),mean(yy), mean(zz), text = group,
 #          col= group.col[i], cex = 2)
 #}
